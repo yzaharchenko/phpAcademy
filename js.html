@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+   <meta charset="utf-8">
+   <title>JS</title>
+   </head>
+<body>
+   <script>   
+    var cash = +prompt("Сумма покупки?","");
+	var discount = Math.round(Math.random()*15);
+	var CASH_DISCOUNT = 1000;
+	var sumDiscount = cash*discount/100;
+	
+	if (cash >= CASH_DISCOUNT) {
+	alert("Мы можем предложить Вам скидку в " + discount + "%");
+	alert("Если Вы произведёте расчет наличными то мы бесплатно доставим товар на расстояние до 30 км. Доставка на расстояние свыше 30 км. стоит 5 грн/км.");
+	var cashPay = confirm("Вы будете оплачивать наличными?");
+		if (cashPay=true) { 
+		var length = +prompt("Растояние доставки? (км.)","")
+		var OverLength=+(length-30)
+		var PayForDelivery=OverLength*5
+		alert ("Итоговая сумма к оплате за товар " + (cash-sumDiscount) + " грн. " + "Доплата за доставку составляет " + PayForDelivery + " грн.")
+		} else {alert("С Вас " + (cash-sumDiscount+(length*5)) + " грн.")
+		};
+	} else { alert("С Вас " + cash + " грн.")};
+	</script>
+</body>
+
